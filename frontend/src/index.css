@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #FFFBF7;
+    color: #2D241E;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+}
+
+code {
+    font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer base {
+    :root {
+        --background: 30 100% 99%;
+        --foreground: 25 20% 15%;
+        --card: 0 0% 100%;
+        --card-foreground: 25 20% 15%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 25 20% 15%;
+        --primary: 25 100% 50%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 25 100% 88%;
+        --secondary-foreground: 25 20% 15%;
+        --muted: 30 30% 93%;
+        --muted-foreground: 25 10% 45%;
+        --accent: 75 85% 72%;
+        --accent-foreground: 25 20% 15%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 25 30% 90%;
+        --input: 25 30% 90%;
+        --ring: 25 100% 50%;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-3 font-bold shadow-soft-orange transition-all hover:scale-105 active:scale-95;
+    }
+    
+    .btn-secondary {
+        @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full px-8 py-3 font-bold transition-all hover:scale-105 active:scale-95;
+    }
+    
+    .btn-outline {
+        @apply border-2 border-primary text-primary hover:bg-primary/10 rounded-full px-8 py-3 font-bold transition-all;
+    }
+    
+    .card-orange {
+        @apply bg-white rounded-3xl border border-orange-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+    }
+    
+    .input-orange {
+        @apply rounded-2xl border-orange-200 bg-white px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-muted-foreground/50;
+    }
+    
+    .gradient-hero {
+        @apply bg-gradient-to-br from-orange-50 via-white to-orange-100;
+    }
+    
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-600;
+    }
+}
+
+@layer utilities {
+    .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+    }
+    
+    .animate-fade-in-delay-1 {
+        animation: fade-in 0.5s ease-out 0.1s forwards;
+        opacity: 0;
+    }
+    
+    .animate-fade-in-delay-2 {
+        animation: fade-in 0.5s ease-out 0.2s forwards;
+        opacity: 0;
+    }
+    
+    .animate-fade-in-delay-3 {
+        animation: fade-in 0.5s ease-out 0.3s forwards;
+        opacity: 0;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5EFE6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFD8C2;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FF6B00;
+}
